@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Location</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>IP</mat-label>
+    <input matInput [(ngModel)]="data.ip">
+  </mat-form-field>
+  <br>
+  <button mat-stroked-button (click)="scan(data.ip)">Scan</button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="{ delete: data.index }">Delete</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
